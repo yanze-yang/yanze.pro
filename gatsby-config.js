@@ -1,3 +1,4 @@
+const path = require("path")
 module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Blog`,
@@ -34,6 +35,7 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
+              showLineNumbers: false,
             },
           },
           {
@@ -42,6 +44,12 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
+          // {
+          //   resolve: `gatsby-remark-vscode`,
+          //   options: {
+          //     theme: "Solarized Light", // Or install your favorite theme from GitHub
+          //   },
+          // },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,

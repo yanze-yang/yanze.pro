@@ -10,6 +10,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
+  console.log("tableOfContents", post.tableOfContents)
+
+  const Content = () => {
+    return <div dangerouslySetInnerHTML={{ __html: post.tableOfContents }} />
+  }
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -37,6 +42,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             {post.frontmatter.date}
           </p>
         </header>
+        <Content />
+        <section dangerouslySetInnerHTML={{ __html: post.tableOfContents }} />
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
@@ -96,6 +103,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
       }
+      tableOfContents
     }
   }
 `
