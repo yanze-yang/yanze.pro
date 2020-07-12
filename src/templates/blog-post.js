@@ -10,7 +10,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
-  console.log("tableOfContents", post.tableOfContents)
 
   const Content = () => {
     return <div dangerouslySetInnerHTML={{ __html: post.tableOfContents }} />
@@ -44,7 +43,14 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </header>
         <Content />
         <section dangerouslySetInnerHTML={{ __html: post.tableOfContents }} />
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <section
+          dangerouslySetInnerHTML={{ __html: post.html }}
+          style={{
+            fontFamily: "EB Garamond,serif",
+            fontWeight: "400",
+            ...scale(1 / 3),
+          }}
+        />
         <hr
           style={{
             marginBottom: rhythm(1),
