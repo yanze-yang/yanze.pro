@@ -11,6 +11,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
 
+  console.log("post.tableOfContents", post.tableOfContents)
+
   const Content = () => {
     return <div dangerouslySetInnerHTML={{ __html: post.tableOfContents }} />
   }
@@ -42,7 +44,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </p>
         </header>
         <Content />
-        <section dangerouslySetInnerHTML={{ __html: post.tableOfContents }} />
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           style={{
