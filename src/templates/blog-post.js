@@ -11,12 +11,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
 
-  console.log("post.tableOfContents", post.tableOfContents)
-
-  const Content = () => {
-    return <div dangerouslySetInnerHTML={{ __html: post.tableOfContents }} />
-  }
-
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
@@ -110,7 +104,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
       }
-      tableOfContents
     }
   }
 `
