@@ -41,7 +41,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           style={{
-            fontFamily: "EB Garamond,serif",
+            fontFamily: "EB Garamond, Noto Sans SC, serif",
             fontWeight: "400",
             ...scale(1 / 3),
           }}

@@ -17,9 +17,11 @@ The every() method tests whether
 🌟pass the test implemented by the provided function.
 It returns a Boolean value.
 
+实际上，本教程也是我对于区块链认识的一个剪影。区块链不仅仅是计算机科学，还涉及了政治经济制度，社会分工协作等等很多方面，因此我的关注点不仅在于深度，更在于其广度，更多是站在研究的角度，而非仅仅是一个程序员的视角。
+
 Given an array, write a function to check if all elements of that array are less than 100 or not.
 
-```javascript{numberLines: true}
+```javascript{numberLines: true}·
 function fnIsLessThan100_Every(arr) {
   return arr.every(element => element < 100) // highlight-line
 }
